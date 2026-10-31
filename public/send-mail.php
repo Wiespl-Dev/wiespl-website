@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $home = preg_replace('#/public_html(/.*)?$#', '', str_replace('\\', '/', __DIR__));
 $configFile = $home . '/wiespl-mail-config.php';
 if (!is_file($configFile)) {
-    respond(500, 'Mail is not configured on the server.');
+    respond(503, 'Our contact form is being set up. Please email us at sales@wiespl.com or call +91 84848 21469.');
 }
 $config = require $configFile;
 
