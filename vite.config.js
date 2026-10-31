@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// On GitHub Pages the site lives at https://wiespl-dev.github.io/wiespl-website/,
-// so production builds use that sub-path. Locally (npm run dev) it stays at "/".
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/wiespl-website/' : '/',
+// Two builds:
+//   npm run build        → for wiespl.com on HostGator (site at "/", contact form uses send-mail.php)
+//   npm run build:pages  → for the GitHub Pages preview at https://wiespl-dev.github.io/wiespl-website/
+export default defineConfig(({ command, mode }) => ({
+  base: command === 'build' && mode === 'pages' ? '/wiespl-website/' : '/',
   plugins: [react()],
   build: {
     // three.js is ~900 kB but loaded lazily only when a 3D scene is on screen.

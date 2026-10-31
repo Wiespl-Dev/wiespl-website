@@ -2,3 +2,6 @@ node_modules
 dist
 .env
 .env.local
+
+# Real mail password file — lives only on the server, never in git
+wiespl-mail-config.php

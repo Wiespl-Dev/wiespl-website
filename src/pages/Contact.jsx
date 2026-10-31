@@ -20,8 +20,8 @@ const subjects = [
   { value: 'Other', label: 'Other' },
 ];
 
-// Set VITE_CONTACT_ENDPOINT in .env (e.g. a Formspree URL) to receive messages directly.
-// Without it, the form opens the visitor's email app with the message filled in.
+// The wiespl.com build (.env.production) posts to /send-mail.php on HostGator, which emails sales.
+// Builds without an endpoint (e.g. the GitHub Pages preview) open the visitor's email app instead.
 const ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT;
 
 export default function Contact() {
@@ -122,16 +122,20 @@ function ContactForm() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(result.message || `HTTP ${res.status}`);
       form.reset();
       setStatus({ state: 'success', message: 'Thank you! Your message has been sent. We will get back to you within one business day.' });
-    } catch {
-      setStatus({ state: 'error', message: `Something went wrong. Please try again or email us at ${company.salesEmail}.` });
+    } catch (err) {
+      const serverMessage = err.message && !err.message.startsWith('HTTP') && err.message !== 'Failed to fetch' ? err.message : null;
+      setStatus({ state: 'error', message: serverMessage ?? `Something went wrong. Please try again or email us at ${company.salesEmail}.` });
     }
   }
 
   return (
     <form className="contact-form" onSubmit={onSubmit}>
+      {/* Spam trap: hidden from people, but bots fill it in and send-mail.php then drops the message. */}
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
       <div className="form-row">
         <Field label="First name" name="firstName" required autoComplete="given-name" />
         <Field label="Last name" name="lastName" required autoComplete="family-name" />

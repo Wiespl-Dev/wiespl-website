@@ -26,10 +26,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - run: npm run build:pages
       # GitHub Pages has no server-side routing: serving index.html as the 404 page
       # lets links like /wiespl-website/about open the right page directly.
       - run: cp dist/index.html dist/404.html
+      # The PHP mailer and Apache config are only for HostGator, not GitHub Pages.
+      - run: rm -f dist/send-mail.php dist/.htaccess
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
