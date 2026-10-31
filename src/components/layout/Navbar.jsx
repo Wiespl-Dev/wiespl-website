@@ -37,7 +37,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease }}
       >
         <Link to="/" className="nav-logo" aria-label="WIESPL home">
-          <img src={img('logo.png')} alt="WIESPL" />
+          <span className="brand"><img src={img('logo-mark.png')} alt="" className="brand-mark" /><span className="brand-word">WIESPL</span></span>
         </Link>
 
         <nav className="nav-links" onMouseLeave={() => setHovered(null)}>

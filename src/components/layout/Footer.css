@@ -47,11 +47,16 @@
   border-top: 1px solid var(--line);
 }
 
-.footer-brand img {
-  height: 56px;
-  width: auto;
+.footer-brand .brand {
   margin-bottom: 18px;
-  filter: brightness(0) invert(1);
+}
+
+.footer-brand .brand-mark {
+  height: 52px;
+}
+
+.footer-brand .brand-word {
+  font-size: 26px;
 }
 
 .footer-brand p {

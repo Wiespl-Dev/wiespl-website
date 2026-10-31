@@ -97,7 +97,7 @@ export function Preloader() {
         <motion.div className="preloader" exit={{ clipPath: 'inset(0 0 100% 0)', transition: { duration: 1, ease: [0.77, 0, 0.18, 1] } }}>
           <motion.div className="preloader-inner" exit={{ y: -60, opacity: 0, transition: { duration: 0.5 } }}>
             <motion.img
-              src={img('logo.png')}
+              src={img('logo-mark.png')}
               alt=""
               className="preloader-logo"
               initial={{ opacity: 0, y: 20 }}

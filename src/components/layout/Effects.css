@@ -120,7 +120,6 @@
 .preloader-logo {
   width: 150px;
   margin: 0 auto 40px;
-  filter: brightness(0) invert(1);
 }
 
 .preloader-bar {

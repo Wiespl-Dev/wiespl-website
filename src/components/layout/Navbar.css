@@ -24,15 +24,17 @@
   -webkit-backdrop-filter: blur(22px) saturate(1.4);
 }
 
-.nav-logo img {
-  height: 42px;
-  width: auto;
-  filter: brightness(0) invert(1);
+.nav-logo {
+  text-decoration: none;
+}
+
+.nav-logo .brand-mark {
+  height: 40px;
   transition: transform 0.4s var(--ease);
 }
 
-.nav-logo:hover img {
-  transform: scale(1.05);
+.nav-logo:hover .brand-mark {
+  transform: scale(1.06) rotate(-3deg);
 }
 
 .nav-links {
@@ -185,7 +187,11 @@
     display: block;
   }
 
-  .nav-logo img {
-    height: 36px;
+  .nav-logo .brand-mark {
+    height: 34px;
+  }
+
+  .nav-logo .brand-word {
+    font-size: 18px;
   }
 }

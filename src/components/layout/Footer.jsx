@@ -31,7 +31,7 @@ export default function Footer() {
 
       <div className="footer-grid">
         <div className="footer-brand">
-          <img src={img('logo.png')} alt="WIESPL" />
+          <span className="brand"><img src={img('logo-mark.png')} alt="" className="brand-mark" /><span className="brand-word">WIESPL</span></span>
           <p>{company.tagline}</p>
         </div>
         {footerColumns.map((col) => (
