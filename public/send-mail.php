@@ -6,7 +6,7 @@
  * through Google Workspace SMTP, so messages arrive reliably and not in spam.
  *
  * Settings (mailbox, app password, recipient) live in wiespl-mail-config.php, which is kept
- * ONE FOLDER ABOVE public_html so it can never be opened from the web.
+ * in the home folder ABOVE public_html so it can never be opened from the web.
  * See hosting/mail-config.example.php in the project for the template.
  */
 
@@ -23,7 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(405, 'Method not allowed');
 }
 
-$configFile = dirname(__DIR__) . '/wiespl-mail-config.php';
+// Look in the hosting account's home folder (the folder that contains public_html),
+// e.g. /home2/serve5jz/wiespl-mail-config.php — wherever this script sits inside public_html.
+$home = preg_replace('#/public_html(/.*)?$#', '', str_replace('\\', '/', __DIR__));
+$configFile = $home . '/wiespl-mail-config.php';
 if (!is_file($configFile)) {
     respond(500, 'Mail is not configured on the server.');
 }

@@ -1,0 +1,26 @@
+# ═══ NEW wiespl.com WEBSITE — START ═══════════════════════════════════════════
+# Shows the new site (folder: public_html/wiespl-new) for wiespl.com and www.wiespl.com only.
+# server.wiespl.com and all subdomains are not matched, so they keep working exactly as before.
+# To undo: delete everything from START to END and save.
+RewriteEngine On
+
+# 1. Always use https:// on wiespl.com
+RewriteCond %{HTTP_HOST} ^(www\.)?wiespl\.com$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# 2. Files that exist in the new site's folder (images, scripts, send-mail.php) → serve them from there
+RewriteCond %{HTTP_HOST} ^(www\.)?wiespl\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/wiespl-new/
+RewriteCond %{DOCUMENT_ROOT}/wiespl-new/$1 -f
+RewriteRule ^(.+)$ /wiespl-new/$1 [L]
+
+# 3. Every page address (/, /about, /services, ... and old CMS pages) → the new site.
+#    SSL certificate checks (/.well-known/) still work. Old PHP pages never show on wiespl.com.
+RewriteCond %{HTTP_HOST} ^(www\.)?wiespl\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/(wiespl-new|\.well-known)/
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule ^ /wiespl-new/index.html [L]
+# ═══ NEW wiespl.com WEBSITE — END ═════════════════════════════════════════════
+

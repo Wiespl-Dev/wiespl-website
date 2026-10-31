@@ -1,24 +1,10 @@
-# Apache config for wiespl.com on HostGator.
-
-RewriteEngine On
-
-# Always use https://
-RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Old site pages (about.html, services.html ...) → new pages, so old links and Google results keep working
-RewriteRule ^index\.html$ / [L,R=301]
-RewriteRule ^about\.html$ /about [L,R=301]
-RewriteRule ^digital-or\.html$ /digital-or [L,R=301]
-RewriteRule ^services\.html$ /services [L,R=301]
-RewriteRule ^contact\.html$ /contact [L,R=301]
-RewriteRule ^(expo|app-demo)\.html$ / [L,R=301]
-
-# Single-page app: any path that isn't a real file opens index.html, and React shows the right page
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [L]
+# Apache config for the new site's own folder on HostGator: public_html/wiespl-new/
+#
+# Routing (which requests come here) is done by the rules pasted at the top of
+# public_html/.htaccess — see hosting/public_html-htaccess-rules.txt.
+# Turning the rewrite engine off here stops those parent rules running again inside
+# this folder, so requests can never loop.
+RewriteEngine Off
 
 # Cache images and built files for a year (their names change when they change); never cache index.html
 <IfModule mod_headers.c>
