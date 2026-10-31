@@ -11,6 +11,7 @@ import ImageReveal from '../components/ui/ImageReveal';
 import { DeviceScene } from '../components/three';
 import { digitalOrModules, digitalOrPillars, videoConferencing } from '../data/pages';
 import './DigitalOR.css';
+import { img } from '../utils/img';
 
 export default function DigitalOR() {
   return (
@@ -82,7 +83,7 @@ export default function DigitalOR() {
             </Reveal>
             <CheckList items={videoConferencing} />
           </div>
-          <ImageReveal src="/images/video-conference.jpg" alt="Surgeon using WIESPL Digital OR video conferencing on a tablet" className="feat-media">
+          <ImageReveal src={img('video-conference.jpg')} alt="Surgeon using WIESPL Digital OR video conferencing on a tablet" className="feat-media">
             <div className="feat-media-caption glass">
               <small>Module G</small>
               <strong>Live Video Conferencing</strong>

@@ -5,6 +5,7 @@ import { useIntroReady } from '../../context/IntroContext';
 import { useLenis } from '../../context/SmoothScroll';
 import Icon from '../ui/Icon';
 import './Effects.css';
+import { img } from '../../utils/img';
 
 // Thin gradient bar at the top showing how far down the page you are.
 export function ScrollProgress() {
@@ -96,7 +97,7 @@ export function Preloader() {
         <motion.div className="preloader" exit={{ clipPath: 'inset(0 0 100% 0)', transition: { duration: 1, ease: [0.77, 0, 0.18, 1] } }}>
           <motion.div className="preloader-inner" exit={{ y: -60, opacity: 0, transition: { duration: 0.5 } }}>
             <motion.img
-              src="/images/logo.png"
+              src={img('logo.png')}
               alt=""
               className="preloader-logo"
               initial={{ opacity: 0, y: 20 }}

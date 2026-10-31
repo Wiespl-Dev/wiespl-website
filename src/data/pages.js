@@ -1,3 +1,5 @@
+import { img } from '../utils/img';
+
 // Text and image content for the Home, About, Digital OR and Services pages.
 
 export const whyWiespl = [
@@ -70,15 +72,15 @@ export const coreValues = [
 ];
 
 export const eventPhotos = [
-  { src: '/images/expo-mumbai-1.jpg', alt: 'Digital OR discussion', caption: 'Discussing the Digital OR ecosystem with delegates on the expo floor.' },
-  { src: '/images/expo-mumbai-2.jpg', alt: 'Team engaging visitors', caption: 'Our team walking visiting partners through the platform live.' },
-  { src: '/images/expo-mumbai-3.jpg', alt: 'WIESPL booth', caption: 'The WIESPL Digital OR booth at the Mumbai expo.', wide: true },
+  { src: img('expo-mumbai-1.jpg'), alt: 'Digital OR discussion', caption: 'Discussing the Digital OR ecosystem with delegates on the expo floor.' },
+  { src: img('expo-mumbai-2.jpg'), alt: 'Team engaging visitors', caption: 'Our team walking visiting partners through the platform live.' },
+  { src: img('expo-mumbai-3.jpg'), alt: 'WIESPL booth', caption: 'The WIESPL Digital OR booth at the Mumbai expo.', wide: true },
 ];
 
 export const director = {
   name: 'Sudhir Dnyaneshwar Pimpale',
   role: 'Director',
-  photo: '/images/director.jpg',
+  photo: img('director.jpg'),
   bio: "Founder and Managing Director of WIESPL, inventor of the BGM air purifier — a President's Award-winning technology that neutralizes airborne bacteria and viruses in real time. Under his leadership, WIESPL has become synonymous with infection control.",
   points: [
     {
@@ -94,17 +96,17 @@ export const director = {
 
 export const digitalOrPillars = [
   {
-    img: '/images/surgeon-entrance.jpg',
+    img: img('surgeon-entrance.jpg'),
     title: 'Ergonomic Design Excellence',
     body: 'Surgical layouts, lighting controls, and interfaces engineered to reduce cognitive load and physical fatigue.',
   },
   {
-    img: '/images/esp-control-panel.jpg',
+    img: img('esp-control-panel.jpg'),
     title: 'Environmental Control',
     body: 'ESP32 sensor arrays with real-time monitoring of pressure, temperature, humidity, and HEPA faults.',
   },
   {
-    img: '/images/digital-integration.jpg',
+    img: img('digital-integration.jpg'),
     title: 'Seamless Digital Integration',
     body: '4K surgical video, DICOM imaging, patient info, inventory, and sterile compliance — unified in one touch interface.',
   },
@@ -113,7 +115,7 @@ export const digitalOrPillars = [
 export const digitalOrModules = [
   {
     tag: 'Module A',
-    img: '/images/surgeon-entrance.jpg',
+    img: img('surgeon-entrance.jpg'),
     title: 'Surgeon Control Panel',
     body: 'Direct touch interface for real-time OT management with live ESP32 sensor data and automated HEPA fault alerting.',
     pills: ['ESP32', 'Real-time', 'Touch UI'],
@@ -165,8 +167,8 @@ export const beforeAfterSpaces = [
   {
     id: 'ot',
     label: 'Modular OT',
-    before: '/images/ba-before-ot.jpg',
-    after: '/images/service-modular-ot.jpeg',
+    before: img('ba-before-ot.jpg'),
+    after: img('service-modular-ot.jpeg'),
     hotspots: [
       { top: 25, left: 60, title: 'Control Panel', text: 'ESP32-based touch panel' },
       { top: 18, left: 35, title: 'Surgical Lighting', text: 'LED shadowless OT light' },
@@ -178,8 +180,8 @@ export const beforeAfterSpaces = [
     id: 'icu',
     label: 'Modular ICU',
     // TODO: the old site reused the OT photos here — swap in real ICU before/after photos.
-    before: '/images/ba-before-ot.jpg',
-    after: '/images/service-modular-ot.jpeg',
+    before: img('ba-before-ot.jpg'),
+    after: img('service-modular-ot.jpeg'),
     hotspots: [
       { top: 30, left: 55, title: 'Patient Monitor', text: 'Multi-parameter vitals tracking' },
       { top: 48, left: 25, title: 'Bedhead Trolley', text: 'Gas outlets & nurse call' },
@@ -190,8 +192,8 @@ export const beforeAfterSpaces = [
     id: 'ivf',
     label: 'Sterile IVF Lab',
     // TODO: the old site reused the OT photos here — swap in real IVF lab before/after photos.
-    before: '/images/ba-before-ot.jpg',
-    after: '/images/service-modular-ot.jpeg',
+    before: img('ba-before-ot.jpg'),
+    after: img('service-modular-ot.jpeg'),
     hotspots: [
       { top: 22, left: 50, title: 'Laminar Flow Workstation', text: 'ISO Class 5 embryo handling' },
       { top: 50, left: 30, title: 'Incubator Bank', text: 'Tri-gas culture incubators' },

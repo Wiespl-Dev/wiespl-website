@@ -5,6 +5,7 @@ import { company, navLinks } from '../../data/site';
 import { useScrollLock } from '../../context/SmoothScroll';
 import Button from '../ui/Button';
 import './Navbar.css';
+import { img } from '../../utils/img';
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -36,7 +37,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease }}
       >
         <Link to="/" className="nav-logo" aria-label="WIESPL home">
-          <img src="/images/logo.png" alt="WIESPL" />
+          <img src={img('logo.png')} alt="WIESPL" />
         </Link>
 
         <nav className="nav-links" onMouseLeave={() => setHovered(null)}>

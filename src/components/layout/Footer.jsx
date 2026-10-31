@@ -5,6 +5,7 @@ import { company, footerColumns } from '../../data/site';
 import SplitText from '../motion/SplitText';
 import Button from '../ui/Button';
 import './Footer.css';
+import { img } from '../../utils/img';
 
 // Closing call-to-action + links. The giant WIESPL wordmark rises into place as you reach the bottom.
 export default function Footer() {
@@ -30,7 +31,7 @@ export default function Footer() {
 
       <div className="footer-grid">
         <div className="footer-brand">
-          <img src="/images/logo.png" alt="WIESPL" />
+          <img src={img('logo.png')} alt="WIESPL" />
           <p>{company.tagline}</p>
         </div>
         {footerColumns.map((col) => (

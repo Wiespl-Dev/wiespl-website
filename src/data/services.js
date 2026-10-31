@@ -1,3 +1,5 @@
+import { img } from '../utils/img';
+
 // Each service shows as a card on the Services page. Clicking it opens a popup
 // built from `blocks` — a list of content pieces drawn by ServiceModal.jsx.
 // Text supports **bold** and *italic*.
@@ -20,7 +22,7 @@ export const services = [
     num: '01',
     title: 'Digital OR',
     tag: 'Flagship',
-    image: '/images/service-digital-or.jpeg',
+    image: img('service-digital-or.jpeg'),
     summary: 'Fully integrated operating room with AI environmental control, 4K video, DICOM imaging.',
     blocks: [
       { type: 'subtitle', text: "The Surgeon's Challenge" },
@@ -63,7 +65,7 @@ export const services = [
     num: '02',
     title: 'Modular OT',
     tag: 'ISO Compliant',
-    image: '/images/service-modular-ot.jpeg',
+    image: img('service-modular-ot.jpeg'),
     summary: 'ISO-compliant prefabricated operating theatres with laminar airflow and rapid deployment.',
     blocks: [
       { type: 'subtitle', text: 'Modular Design for Uncompromising Sterility' },
@@ -132,7 +134,7 @@ export const services = [
     num: '03',
     title: 'Modular ICU',
     tag: 'Critical Care',
-    image: '/images/service-modular-icu.jpeg',
+    image: img('service-modular-icu.jpeg'),
     summary: 'Critical care environments engineered for maximum clinical efficiency and infection control.',
     blocks: [
       { type: 'subtitle', text: 'Redefining Critical Care Environments' },
@@ -181,7 +183,7 @@ export const services = [
     num: '04',
     title: 'Modular NICU',
     tag: 'Neonatal',
-    image: '/images/service-modular-nicu.jpeg',
+    image: img('service-modular-nicu.jpeg'),
     summary: 'Precision-controlled neonatal units with optimised thermal and acoustic environments.',
     blocks: [
       { type: 'subtitle', text: 'WIESPL Modular Neonatal Intensive Care Units (NICU)' },
@@ -246,7 +248,7 @@ export const services = [
     num: '05',
     title: 'Sterile IVF Lab',
     tag: 'ISO Class 5',
-    image: '/images/service-ivf-lab.jpeg',
+    image: img('service-ivf-lab.jpeg'),
     summary: 'ISO Class 5 classified IVF laboratory with HEPA filtration and contamination control.',
     blocks: [
       { type: 'subtitle', text: 'The IVF Environment: Where Precision is Life' },
@@ -322,7 +324,7 @@ export const services = [
     num: '06',
     title: 'Design & Consulting',
     tag: 'Turnkey',
-    image: '/images/service-design-consulting.jpeg',
+    image: img('service-design-consulting.jpeg'),
     summary: 'End-to-end hospital infrastructure consulting from layout planning to staff training.',
     blocks: [
       { type: 'text', text: 'End-to-end hospital infrastructure consulting from layout planning to staff training.' },

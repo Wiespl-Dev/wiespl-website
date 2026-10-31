@@ -3,8 +3,9 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { ContactShadows, Environment, Float, Html, Lightformer, RoundedBox, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import SceneCanvas from './SceneCanvas';
+import { img } from '../../utils/img';
 
-const screens = ['/images/app-tab-1.jpg', '/images/app-tab-2.jpg', '/images/app-tab-3.jpg'];
+const screens = [img('app-tab-1.jpg'), img('app-tab-2.jpg'), img('app-tab-3.jpg')];
 
 // A 3D tablet showing the real Digital OR app screens. It turns as the section scrolls
 // (`progress` motion value 0 → 1) and leans toward the mouse, with floating live-data chips.
